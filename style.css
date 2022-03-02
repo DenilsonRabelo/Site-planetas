@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url('./img/espaco.gif');
+}
+
+.page-init {
+    height: 100vh;
+    background-repeat: repeat;
+    width: 100%;
+}
+
+
+.nav-init {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 8% 0px 8%;
+}
+
+.logo {
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-barra li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 15px;
+}
+
+.nav-barra li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
+.setor-mercurio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.planeta {
+    width: 20rem;
+    height: 20rem;
+    background-image: url('./img/map-venus-planet-lava-fire-hot-gas.jpg');
+    box-shadow: inset -2rem -2rem 2rem #000, -0.5rem -0.5rem 1rem #f0d08b;
+    position: relative;
+    animation: rotacao 10s linear infinite;
+}
+.lua {
+    background-image: url('./img/mercury.jpg');
+    box-shadow: inset -1.5rem -1.5rem 1.5rem #000, -0.2rem -0.2rem 0.5rem #ccc;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    left: -11rem;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: 
+        rotacao 5s linear infinite,
+        orbita 20s infinite ease-in-out;
+    z-index: 1;
+}
+
+.planeta, .lua, .terra, .jupter, .sol {
+    border-radius: 50%;
+    background-repeat: repeat;
+    background-size: 200% 100%;
+}
+@keyframes rotacao {
+    to { background-position: -200% 0;}
+}
+@keyframes orbita {
+    49% {
+        z-index: 1;
+    }
+    50% {
+        left: 25rem;
+        z-index: -1;
+    }
+    99% {
+        z-index: -1;
+    }
+    100% {
+        left: -11rem;
+        z-index: 1;
+    }
+}
+
+
+.setor-terra, .setor-jupter {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terra {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    background-image: url("./img/terra.jpg");
+    box-shadow: inset -2rem -2rem 2rem #000, -0.5rem -0.5rem 1rem #2671b8;
+    animation: rotacao 10s linear infinite;
+}
+
+.sol {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    background-image: url("./img/sol.jpg");
+    left: -29rem;
+    top: 50%;
+    box-shadow: inset -1.5rem -1.5rem 1.5rem #000, -0.2rem -0.2rem 0.5rem rgb(197, 81, 4);
+    transform: translateY(-50%);
+    animation: 
+        rotacao 10s linear infinite,
+        orbita-sol 20s infinite ease-in-out;
+    z-index: 10;
+
+}
+
+@keyframes orbita-sol {
+    49% {
+        z-index: 10rem;
+    }
+    50% {
+        left: 35rem;
+        z-index: -1;
+    }
+    99% {
+        z-index: -1;
+    }
+    100% {
+        left: -29rem;
+        z-index: 10;
+    }
+}
+
+.jupter {
+    width: 20rem;
+    height: 20rem;
+    position: absolute;
+    background-image: url("./img/jupter.jpg");
+    box-shadow: inset -2rem -2rem 2rem #000, -0.5rem -0.5rem 1rem #f4a261;
+    animation: rotacao 10s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
